@@ -57,7 +57,7 @@ echo -e "$datafield${LBUE}\n"
 echo -e "${LBLUE}Preparing tx as follows:${YELLOW}\n"
 echo "erdpy --verbose tx new --send --outfile="sent-tx-$NONCE.json" --pem=$PEM_FILE --nonce=$NONCE --receiver=$send_address_c1"" --value=0 --gas-limit 500000 --chain=$chainID"" --proxy=$PROXY --data=$datafield"
 sendtx="erdpy --verbose tx new --send --outfile="sent-tx-$NONCE.json" --pem=$PEM_FILE --nonce=$NONCE --receiver=$send_address_c1"" --value=0 --gas-limit 500000 --chain=$chainID"" --proxy=$PROXY --data=$datafield"
-#note the following sleeps are needed because with out them, the sending will happen to fast -- which throws off the nonce, as nonce only chages after a TX has had time to be processed 
+#note the following sleeps are needed because without them, the sending will happen too fast -- which throws off the nonce, as nonce only chages after a TX has had time to be processed 
 sleep 6
 eval $sendtx
 #echo "Transaction sent with nonce $NONCE and backed up to bon-mission-tx-$NONCE.json."
