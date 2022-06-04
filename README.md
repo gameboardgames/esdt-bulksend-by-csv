@@ -21,3 +21,7 @@ Note:
 You'll need to 
 chmod a+x esdt-csv-send.sh
 before it'll run.
+
+Change log:  
+June 3rd v1.01 update, fixed some small things, and added more description.  NOTE that a bug was found and still exists.  The script only seems to work up to 99 entries in the CSV file.  After that, an error in the hex field conversion seems to happen. 
+Until this is fixed,break your send lists down to file increments of up to a max of 99 TXs per CSV.
