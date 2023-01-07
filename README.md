@@ -17,10 +17,12 @@ nomenclature, which can be changed if you like. Also note to change the chain yo
 
 Finally, prepare your CSV file, using the sample as a guide. Once you have your CSV file created, be sure to name it the same or change the corresponding file name in the script.
 
-One really super-duper important thing we found out after a lot of hair pulling was that for your CSV file, unless you made it in Linux, want to use the program DOS2UNIX (available in Ubuntu) to
-first process the CSV file. Even if you d/led from a cloud source like Google Drive, or if you have any hex calculations coming up, use DOS2UNIX on your CSV like this: 
+One really super-duper important thing we found out after a lot of hair-pulling was that for your CSV file, unless you made it in a 100% Linux environment, you'll need to use the program DOS2UNIX to
+first process the CSV file. Even if you d/led from a cloud source like Google Drive, or if you have any hex calculations errors, try using DOS2UNIX on your CSV like this: 
 dos2unix mysample.csv 
 Many bothans died for this information. 
+
+More info dos2unix: https://linux.die.net/man/1/dos2unix
 
 Note: 
 You'll need to 
