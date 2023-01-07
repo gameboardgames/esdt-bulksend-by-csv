@@ -4,7 +4,11 @@ This BASH script reads a CSV file to send corresponding ESDT tokens, using erdpy
 Version 1.0 released to Elrond community Feb 16th 2022 by steak4all, feel free to use in any way useful.  
 GNU bash 5.0.17(1) used (default of ubuntu 20.04) 
 
-Have many Elrond Digital Standard Tokens to send, but have no way to send to many wallets easily?  This script will read a CSV file (listing the senders and the amount of tokens they will get) and then send the corresponding amounts to the users. 
+Have many Elrond Standard Digital Tokens to send, but have no way to send them to 100s of wallets easily?  
+
+This in-steakhouse made script will read a CSV file (listing the senders and the amount of tokens they will get) and then send the corresponding amounts to the users. 
+
+It can be easily updated to your own token of choice! So get some spices ready. 
 
 How to use this script? 
 
