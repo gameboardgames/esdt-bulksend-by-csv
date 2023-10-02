@@ -6,12 +6,12 @@ EXTRADECIMAL="000000"
 #devnet ChainID: D
 #mainnet chainID: 1
 chainID="1"
-PROXY="https://gateway.elrond.com"
-#the above two lines confirm this is on mainnet
+PROXY="https://gateway.multiversx.com"
+#next line is your wallet address, enter your own here that will be sending the esdt's
 MYWALLET="erd1xau0xlwlzldje349cxgngnaxym6mmn2pertqkk6ev7dmrlg9urysxjdlyv"
-#obv you'll want to change this above to your own my wallet address. 
-PEM_FILE="./privatewalletkey.pem"
-#text colors, for no particular reason are the next 4 lines
+#next line is your PEM file, needed by erdpy to sign transactions. Read docs on erdpy for more information 
+PEM_FILE="./secretwallet.pem"
+#text color
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
 LBLUE='\033[1;34m'
@@ -48,7 +48,7 @@ do
   echo -e "${LBLUE} \n"
   echo -n "Adjusted no. of steaks:"
   adjustedsteaks=$steaks_c2$EXTRADECIMAL
-  echo "Is:$adjustedsteaks"
+  echo "$adjustedsteaks"
   #prepsteaks="$adjustedsteaks_c2"
   #echo -n "Second prep adjustment of steaks: "
   #echo -n " $prepsteaks"
@@ -56,9 +56,11 @@ do
   echo -e "${LBLUE}Converted to hex:${YELLOW}\n"
   #printf "%x\n", $adjustedsteaks | tee hexfordatafield.txt
   printf "%x" $adjustedsteaks | tee hexfordatafield.txt
-  #above line does a hex conversion and saves the output to the txt file
+  #hexfordatafield="echo -e "${steaks_c2}000000" | od -A n -t x1 | sed 's/ *//g' | tee hexfordatafield.txt"
+  #eval $hexfordatafield
+  #above creates hexfordatafield.txt . next reads this into the hexfordatafield string
   hexfordatafield=$(cat hexfordatafield.txt)
-  #make data field of hex 
+  #make data field
   stringlength=${#hexfordatafield}
   echo -e " \n"
   echo -e "${LBLUE}Adjusted esdt amount hex-field DATA string length: ${YELLOW} $stringlength ${LBLUE}"
@@ -71,9 +73,8 @@ do
    extra0orspace="0"
   fi
  datafield="ESDTTransfer@535445414b532d616262396631@$extra0orspace$hexfordatafield"
- #important!!! this line above is set to STEAKS token currently. You must change @535445414b532d616262396631 to the token you are using. You can get this hex ID 
- #from checking the original smart contract that created the token, or use a tool to convert.
- #or also you can see your hex ID by sending the ESDT token from your wallet and noting the identifier field your token uses
+ #important!!! this line above is set to STEAKS token currently. You must change @535445414b532d616262396631 to the token you are using
+ #which you can get by sending a normal ESDT token from your wallet and noting the identifier field your token uses
  echo -e "${LBLUE}Data Field:${YELLOW}\n"
  echo -e "$datafield${LBLUE}\n"
  #refernce:  erdpy --verbose tx new --send --outfile="./sent-tx-$NONCE.json" --pem=$PEM_FILE --nonce=$NONCE --receiver=$1 --value="$2$DENOMINATION" --gas-limit=50000 --proxy=$PROXY
@@ -88,7 +89,8 @@ do
  #reference DATA field for steaks4all esdt transfer:      ESDTTransfer@535445414b532d616262396631@e4e1c0      ESDTTransfer@535445414b532d616262396631@e4e1c0
  echo -e "${LBLUE}---------Transaction sent!"
  echo -e "${RED} Proceeding to next transaction----${NC}"
- sleep 6
-done < <(tail -n +1 samplesend.csv)
+ sleep 9
+done < <(tail -n +1 thisismy_csv_list_to_send_to, column 1 wallet address, amount of esdt to send in col 2.csv)
 #change the file name above as needed. 
-#and remember to eat vegetables as well, sometimes, steaks need side dishes 
+#note: if you have strange hex conversion errors try using linux program dos2unix on the CSV file 
+#to confirm it is formatted properly. Files from google drive for example, will need processing.
