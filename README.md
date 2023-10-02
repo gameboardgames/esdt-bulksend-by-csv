@@ -1,9 +1,7 @@
 # esdt-bulksend-by-csv 
-
-\\\~~~~~\\
-\\\v1.12||
- 
-\\\~~~~~\\
+__________
+\\v1.12||
+~~~~~~~\\
 
 This is steak4all metaversal meat shoppe's original bulk steak sending scripte. 
 
