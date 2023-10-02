@@ -1,8 +1,10 @@
 # esdt-bulksend-by-csv 
 
-\\~~~~~\
-\\v1.11| 
-\\~~~~~\
+\\\~~~~~\\
+\\\v1.12||
+ 
+\\\~~~~~\\
+
 This is steak4all metaversal meat shoppe's original bulk steak sending scripte. 
 
 This BASH script reads a CSV file to send corresponding ESDT tokens, using erdpy.  Customized for steak4all's fine STEAKS token.  
@@ -37,6 +39,7 @@ before it'll run.
 
 
 Change log:  
+Oct 2rd 2023 v1.12 small fixes and improvements  
 Jan 6th 2023 v1.111 bunch of edits to the text of this document 
 Jan 6th 2023 v1.1 big clean up and update of the code. Found the dreaded HEX bug and killed it, see note on DOS2UNIX above. Updated example csv. 
 June 3rd 2022  v1.01 update, fixed some small things, and added more description. 
